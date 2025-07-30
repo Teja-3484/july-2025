@@ -1,0 +1,19 @@
+class Solution(object):
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        if x==0:
+            return 0
+        f=1
+        l=x
+        while(f<=l):
+            mid=f+(l-f)//2
+            if mid*mid==x:
+                return mid
+            elif mid*mid>x:
+                l=mid-1
+            elif mid*mid<x:
+                f=mid+1
+        return l
