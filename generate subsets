@@ -1,0 +1,14 @@
+def generate(i,arr,sub,ans):
+    if i==len(arr):
+        ans.append(sub.copy())
+        return
+    sub.append(arr[i])
+    generate(i+1,arr,sub,ans)
+    sub.pop()
+    generate(i+1,arr,sub,ans)
+    return ans
+arr=list(map(int,input().split()))
+i=0
+sub=[]
+ans=[]
+print(generate(i,arr,sub,ans))
